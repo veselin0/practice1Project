@@ -24,6 +24,8 @@
 // 'use strict';
 
 const  numberOfFilms = prompt("How much films did you wathch?", "");
+const filmName = prompt("One of the last films you watched?", "");
+const filmRating = prompt("How high do you rate that film?", "");
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -32,15 +34,7 @@ const personalMovieDB = {
     genres: [],
     private: false,
 };
-const filmName = prompt("One of the last films you wwatched?", "");
-const filmRating = prompt("How high do you rate that film?", "");
 
-// personalMovieDB.movies{filmName: filmRating};
-
-// personalMovieDB.movies{[filmName]:[filmRating]};
-
-personalMovieDB.movies = {
-    filmName: filmRating,
-};
+personalMovieDB.movies[filmName] = filmRating;
 
 console.log(personalMovieDB);
