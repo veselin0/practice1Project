@@ -1,4 +1,4 @@
-/* Задание на урок:
+/* Задание на урок1:
 
 1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
 'Сколько фильмов вы уже посмотрели?'
@@ -21,9 +21,21 @@
 
 Проверить, чтобы все работало без ошибок в консоли */
 
-// 'use strict';
+/* Задание на урок2:
 
-const  numberOfFilms = prompt("How much films did you wathch?", "");
+1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+
+2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
+отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
+возвращаем пользователя к вопросам опять
+
+3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
+"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
+"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
+
+4) Потренироваться и переписать цикл еще двумя способами*/
+
+const numberOfFilms = prompt("How much films did you wathch?", "");
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -33,47 +45,36 @@ const personalMovieDB = {
     private: false,
 };
 
-const filmName = prompt("One of the last films you watched?", "");
-const filmRating = prompt("How high do you rate that film?", "");
-const filmName1 = prompt("One of the last films you watched?", "");
-const filmRating1 = prompt("How high do you rate that film?", "");
+let filmName = "";
+let filmRating = "";
 
 
-personalMovieDB.movies[filmName] = filmRating;
-personalMovieDB.movies[filmName1] = filmRating1;
+start: for (let i = 1; i < 3; i++) {
+    let filmName = prompt("One of the last films you watched?", "");
+    if(filmName === null || filmName.length === 0){
+        alert("Film Name Field can not be empty");
+        continue start;
+    } //else if(filmName == null){
+        // alert("Film Name Field can not be canceled");
+        // break start;
+    // }
+    let filmRating = prompt("How high do you rate that film?", "");
+    personalMovieDB.movies[filmName] = filmRating;
+
+}
+
+// const filmName = prompt("One of the last films you watched?", "");
+// const filmRating = prompt("How high do you rate that film?", "");
+// const filmName1 = prompt("One of the last films you watched?", "");
+// const filmRating1 = prompt("How high do you rate that film?", "");
+
+
+// personalMovieDB.movies[filmName] = filmRating;
+// personalMovieDB.movies[filmName1] = filmRating1;
 
 
 console.log(personalMovieDB);
 
-/* Задание на урок:
 
-1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
 
-2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
-отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
-возвращаем пользователя к вопросам опять
 
-3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
-"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
-"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
-
-4) Потренироваться и переписать цикл еще двумя способами*/
-/* Задание на урок:
-
-1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
-
-2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
-отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
-возвращаем пользователя к вопросам опять
-
-3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
-"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
-"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
-
-4) Потренироваться и переписать цикл еще двумя способами*/
-
-'use strict';
-
-// Код возьмите из предыдущего домашнего задания
-
-// Код возьмите из предыдущего домашнего задания
